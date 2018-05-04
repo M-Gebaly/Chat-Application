@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-stylesheet "@../css/mainchatroom.css"?>
+
+<BorderPane fx:id="mainChatPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: #2D3447;" stylesheets="@../css/mainchatroom.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXMLMainChatController">
+   <left>
+      <VBox prefHeight="700.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTabPane nodeOrientation="LEFT_TO_RIGHT" opacity="0.91" prefHeight="689.0" prefWidth="303.0" side="LEFT" stylesheets="@../css/mainchatroom.css">
+               <tabs>
+                  <Tab text="Profile">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="679.0" prefWidth="267.0">
+                                 <children>
+                                    <Circle fx:id="circleImage" fill="DODGERBLUE" radius="58.0" stroke="BLACK" strokeType="INSIDE">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Circle>
+                                    <Label fx:id="userNameLable" alignment="TOP_CENTER" prefHeight="30.0" prefWidth="202.0" textFill="#e4e5ea">
+                                       <font>
+                                          <Font name="Agency FB Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="comboBoxStatus" onAction="#changeStatus" prefWidth="150.0" promptText="Your Staus">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <Line endX="120.0" startX="-120.0" stroke="#2196f3" strokeWidth="2.0" />
+                                    <JFXButton onMouseClicked="#addFrindActon" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2196f3; -fx-background-radius: 50;" text="Add Friend" textFill="#e4e5ea">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../resources/addFrind.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="100.0" top="20.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="iconCreateGroup" buttonType="RAISED" onMouseClicked="#iconCreateGroupAction" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ee2e58;" text="Create Group">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../resources/group.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="190.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                    <JFXButton buttonType="RAISED" onAction="#logoutAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ee2e58;" text="LogOut">
+                                       <graphic>
+                                          <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../resources/exit.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Frinds">
+                     <content>
+                        <JFXListView fx:id="frindListView" prefHeight="610.0" prefWidth="268.0" />
+                     </content>
+                  </Tab>
+                  <Tab text="Request">
+                     <content>
+                        <JFXListView fx:id="requestListView" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </VBox>
+   </left>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <center>
+      <BorderPane prefHeight="687.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+         <center>
+            <TabPane fx:id="tabPane" prefHeight="574.0" prefWidth="527.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin></TabPane>
+         </center>
+         <top>
+            <VBox prefHeight="110.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="69.0" prefWidth="313.0">
+                     <children>
+                        <ImageView fx:id="cFriendimage" fitHeight="76.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="77.0" prefWidth="201.0">
+                           <children>
+                              <Label fx:id="cFriendName" prefHeight="22.0" prefWidth="158.0" text="User Name" textFill="#e4e5ea">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cFriendstatuse" alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="124.0" text="Satuts" textFill="#e4e5ea" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <Line endX="250.0" startX="-250.0" stroke="#2196f3" strokeWidth="2.0" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

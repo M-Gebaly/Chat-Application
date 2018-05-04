@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="connServerPane" prefHeight="443.0" prefWidth="493.0" style="-fx-background-color: #2D3447;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="view.FXMLConnectToServerController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="443.0" prefWidth="493.0">
+         <children>
+            <ImageView fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/transperantLogo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <JFXTextField fx:id="ipText" alignment="CENTER" labelFloat="true" prefHeight="40.0" prefWidth="494.0" promptText="Server IP" style="-fx-text-fill: #a0a2ab; -fx-prompt-text-fill: #a0a2ab;" unFocusColor="#a0a2ab">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="60.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" onAction="#connectAction" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="Connect" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Label fx:id="invalidLabel" text="Invalid IP" textFill="RED" visible="false">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

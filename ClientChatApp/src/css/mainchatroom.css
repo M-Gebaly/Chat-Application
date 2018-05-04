@@ -1,0 +1,26 @@
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color:  #a0a2ab;
+    -fx-border-radius: 30;
+}
+.tab-pane .tab-header-area .tab:selected  {
+    -fx-background-color:  #2196f3;
+    -fx-fill:  #2196f3;
+}
+.tab-header-area .tab{
+    -fx-background-radius: 10 10 0 0;
+}
+
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.list-cell:even { 
+    -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
